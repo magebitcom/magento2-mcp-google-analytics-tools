@@ -1,0 +1,22 @@
+{
+    "name": "magebitcom/magento2-mcp-google-analytics-tools",
+    "description": "Google Analytics 4 MCP tools for Magebit_Mcp — wraps the GA Data and Admin APIs as MCP tools so AI clients can query property metadata, run reports, run realtime reports, and run funnel reports against your store's analytics property.",
+    "type": "magento2-module",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "magento/framework": "^103.0",
+        "magebitcom/magento2-mcp-module": "^1.0.0",
+        "google/analytics-data": "^0.20",
+        "google/analytics-admin": "^0.27",
+        "google/auth": "^1.50"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magebit\\McpGoogleAnalyticsTools\\": ""
+        }
+    }
+}

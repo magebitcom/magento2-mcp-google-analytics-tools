@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="magebit_mcp_google_analytics" translate="label" type="text" sortOrder="510"
+                 showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>MCP Server - Google Analytics</label>
+            <tab>magebit</tab>
+            <resource>Magebit_McpGoogleAnalyticsTools::config</resource>
+            <group id="oauth" translate="label" type="text" sortOrder="10"
+                   showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Google Connection (OAuth)</label>
+                <comment><![CDATA[Connect a Google account that has at least <strong>Viewer</strong> access to your
+                GA4 property — the tools then act as that account.
+                <br/><br/>
+                <strong>Setup:</strong>
+                <ol>
+                    <li>In <a href="https://console.cloud.google.com/apis/credentials" target="_blank">GCP &rarr; APIs &amp; Services &rarr; Credentials</a>, create an <strong>OAuth client ID</strong> of type <em>Web application</em>.</li>
+                    <li>Add the redirect URI shown below to the client's <em>Authorized redirect URIs</em>.</li>
+                    <li>Enable the <strong>Google Analytics Data API</strong> and <strong>Google Analytics Admin API</strong> for the project.</li>
+                    <li>Paste the client ID and secret below, <strong>Save Config</strong>, then click <em>Connect with Google</em>.</li>
+                </ol>]]></comment>
+                <field id="client_id" translate="label comment" type="text" sortOrder="10"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>OAuth Client ID</label>
+                    <comment><![CDATA[The <em>Client ID</em> of your GCP OAuth 2.0 Web-application client.]]></comment>
+                </field>
+                <field id="client_secret" translate="label comment" type="obscure" sortOrder="20"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>OAuth Client Secret</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <comment><![CDATA[The <em>Client secret</em> of the same OAuth client. Stored encrypted at rest.]]></comment>
+                </field>
+                <field id="redirect_base_url" translate="label comment" type="text" sortOrder="25"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Redirect Base URL (optional)</label>
+                    <comment><![CDATA[Optional. The scheme and host used to build the OAuth redirect URI —
+                    e.g. <code>https://abc123.example.com</code>. Leave blank to use this store's base URL.
+                    Set it when the admin is reached through a different external host than the store base URL.
+                    The exact redirect URI to register in your Google client is shown below.]]></comment>
+                    <validate>validate-url</validate>
+                </field>
+                <field id="connection" translate="label" type="label" sortOrder="30"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Connection</label>
+                    <frontend_model>Magebit\McpGoogleAnalyticsTools\Block\Adminhtml\System\Config\GoogleConnect</frontend_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="20"
+                   showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Property</label>
+                <field id="default_property_id" translate="label comment" type="text" sortOrder="10"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Default GA4 Property ID</label>
+                    <comment><![CDATA[Numeric GA4 property ID (e.g. <code>123456789</code>). Used when an MCP tool
+                    call omits the <code>property_id</code> argument. Discover IDs at runtime by calling
+                    <code>google_analytics.account.summaries</code>. Leave blank to require <code>property_id</code>
+                    on every call.]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

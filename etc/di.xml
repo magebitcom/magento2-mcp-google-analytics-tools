@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magebit\Mcp\Model\Tool\ToolRegistry">
+        <arguments>
+            <argument name="tools" xsi:type="array">
+                <item name="google_analytics.account.summaries" xsi:type="object">
+                    Magebit\McpGoogleAnalyticsTools\Tool\Account\Summaries
+                </item>
+                <item name="google_analytics.property.get" xsi:type="object">
+                    Magebit\McpGoogleAnalyticsTools\Tool\Property\Get
+                </item>
+                <item name="google_analytics.property.google_ads_links" xsi:type="object">
+                    Magebit\McpGoogleAnalyticsTools\Tool\Property\GoogleAdsLinks
+                </item>
+                <item name="google_analytics.property.custom_dimensions_and_metrics" xsi:type="object">
+                    Magebit\McpGoogleAnalyticsTools\Tool\Property\CustomDimensionsAndMetrics
+                </item>
+                <item name="google_analytics.report.run" xsi:type="object">
+                    Magebit\McpGoogleAnalyticsTools\Tool\Report\Run
+                </item>
+                <item name="google_analytics.report.run_realtime" xsi:type="object">
+                    Magebit\McpGoogleAnalyticsTools\Tool\Report\RunRealtime
+                </item>
+                <item name="google_analytics.report.run_funnel" xsi:type="object">
+                    Magebit\McpGoogleAnalyticsTools\Tool\Report\RunFunnel
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magebit\Mcp\Model\Util\ToolDomain">
+        <arguments>
+            <argument name="labels" xsi:type="array">
+                <item name="google_analytics" xsi:type="string">Google Analytics</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

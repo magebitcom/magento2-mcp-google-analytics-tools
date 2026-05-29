@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::system">
+                    <resource id="Magebit_Mcp::mcp">
+                        <resource id="Magebit_McpGoogleAnalyticsTools::config"
+                                  title="Google Analytics MCP Configuration" sortOrder="50"/>
+                        <resource id="Magebit_Mcp::tools">
+                            <resource id="Magebit_McpGoogleAnalyticsTools::tool_google_analytics_account_summaries"
+                                      title="Tool: List Google Analytics Account Summaries" sortOrder="300"/>
+                            <resource id="Magebit_McpGoogleAnalyticsTools::tool_google_analytics_property_get"
+                                      title="Tool: Get GA4 Property Details" sortOrder="301"/>
+                            <resource id="Magebit_McpGoogleAnalyticsTools::tool_google_analytics_property_google_ads_links"
+                                      title="Tool: List Google Ads Links" sortOrder="302"/>
+                            <resource id="Magebit_McpGoogleAnalyticsTools::tool_google_analytics_property_custom_dimensions_and_metrics"
+                                      title="Tool: List Custom Dimensions and Metrics" sortOrder="303"/>
+                            <resource id="Magebit_McpGoogleAnalyticsTools::tool_google_analytics_report_run"
+                                      title="Tool: Run Google Analytics Report" sortOrder="304"/>
+                            <resource id="Magebit_McpGoogleAnalyticsTools::tool_google_analytics_report_run_realtime"
+                                      title="Tool: Run Realtime Google Analytics Report" sortOrder="305"/>
+                            <resource id="Magebit_McpGoogleAnalyticsTools::tool_google_analytics_report_run_funnel"
+                                      title="Tool: Run Google Analytics Funnel Report" sortOrder="306"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
