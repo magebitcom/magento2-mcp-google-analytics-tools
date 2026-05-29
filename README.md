@@ -1,4 +1,4 @@
-# Magebit_McpGoogleAnalyticsTools
+# Magento2 MCP - Google Analytics Tools
 
 Google Analytics 4 tools for the [Magebit MCP server](https://github.com/magebitcom/magento2-mcp-module). Exposes the Google Analytics Data API and Admin API as MCP tools so AI clients (Claude Desktop, ChatGPT, Gemini, Claude Code, MCP Inspector, …) can discover properties, run reports, and inspect schema metadata against your store's analytics property.
 
